@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'my_app',
     'drf_yasg',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -41,7 +43,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+CORS_MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
